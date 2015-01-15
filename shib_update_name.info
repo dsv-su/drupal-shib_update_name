@@ -1,5 +1,5 @@
 name = Shibboleth Update Name
-description = Fetches firstname and lastname from Shibboleth attributes when users log in.
+description = Fetches firstname and lastname from Shibboleth attributes when users log in. Requires 'firstname' and 'lastname' fields to be added manually.
 package = Shibboleth
 files[] = shib_update_name.module
 dependencies[] = shib_auth
