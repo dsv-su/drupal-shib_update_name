@@ -1,0 +1,8 @@
+name = Shibboleth Update Name
+description = Fetches firstname and lastname from Shibboleth attributes when users log in.
+package = Shibboleth
+files[] = shib_update_name.module
+dependencies[] = shib_auth
+version = "7.x-0.9"
+core = "7.x"
+datestamp = "1392108587"

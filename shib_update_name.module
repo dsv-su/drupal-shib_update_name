@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_user_login
+ */
+function shib_update_name_user_login(&$edit, $account) {
+	if (isset($_SERVER['sn']) && isset($_SERVER['givenName'])) {
+		$firstname = $_SERVER['givenName'];
+		$lastname = $_SERVER['sn'];
+		$edit = array(
+			'field_firstname' => array(LANGUAGE_NONE => array(array('value' => $firstname))),
+			// This becomes $account->field_custom_first_name[LANGUAGE_NONE][0]['value']
+			'field_lastname' => array(LANGUAGE_NONE => array(array('value' => $lastname)))
+		);
+		user_save($account, $edit); 
+	}
+}
+
+?>
